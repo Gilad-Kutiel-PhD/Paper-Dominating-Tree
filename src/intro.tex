@@ -1,40 +1,56 @@
-An introduction \cite{surlin1976all} with
-\begin{enumerate*}
-\item algorithm
-\item sub figure
-\item inline list
-\end{enumerate*} 
+% \begin{algorithm}[H]
+% 	\KwData{this text}
+% 	\KwResult{how to write algorithm with \LaTeX2e }
+% 	initialization\;
+% 	\While{not at end of this document}{
+% 		read current\;
+% 		\eIf{understand}{
+% 			go to next section\;
+% 			current section becomes this one\;
+% 		}{
+% 			go back to the beginning of current section\;
+% 		}
+% 	}
+% \caption{How to write algorithms}
+% \end{algorithm}
+% 
 
-\begin{algorithm}[H]
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e }
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-	}
-\caption{How to write algorithms}
-\end{algorithm}
+Given an undirected graph $G = (V, E)$ and a weight function $w:E \to \R$, 
+the \Problem{} problem (\Prob{}) asks to find a minimum weight sub-tree of $G$, 
+$T = (U, F)$, such that every $v \in V \setminus U$ is adjacent to at least one 
+vertex in $U$.
+The special case when the weight function is uniform is known as the 
+\textsc{Minimum Connected Dominating Set} problem (CDS). 
+Both CDS and \Prob{} have many applications in routing
+for mobile ad-hoc networks, see for example~\cite{
+shin2010approximation%
+,cheng2003polynomial%
+,das1997routing%
+,adasme2016models%
+,adasme2017minimum%
+}.
 
-\begin{figure}[ht]
-\begin{subfigure}[b]{.4\textwidth}
-	\centering
-	\begin{tikzpicture}
-	\fill[red] (0,0) circle (1cm);
-	\end{tikzpicture}
-	\caption{a circle}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{.4\textwidth}
-	\centering
-	\begin{tikzpicture}
-	\fill[blue] (0,0) rectangle (4,4);
-	\end{tikzpicture}
-	\caption{a square}
-\end{subfigure}
-\end{figure}
+
+\textbf{Previous Work:}
+CDS has a long history starting at the late 70s~\cite{sampathkumar1979connected},
+and it is approximable within $\ln\Delta + 3$~\cite{guha1998approximation} 
+where $\Delta$ is the maximum degree in $G$.
+We are not aware of any hardness result regarding the CDS that show that this approximation
+ratio is the best we can hope for.
+
+\Prob{}, to the best of our knowledge, was introduced in~\cite{shin2010approximation}.
+In the same paper it was shown that the \textsc{Minimum Weighted Dominating Set} problem 
+can be reduced to \Prob{} in a way that preserve the approximation ratio.
+Thus, there is no $(1 - \varepsilon)\log n$-approximation algorithm for the \Prob{} problem
+unless $P = NP$.
+In the same paper it was shown that \Prob{} can be reduced to the 
+\textsc{Minimum Directed Steiner Tree} problem in a way that preserve the approximation ratio.
+Unfortunately, the current best approximation algorithm for the 
+\textsc{Minimum Directed Steiner Tree} problem yields a $|S|^\varepsilon$ 
+approximation ratio~\cite{charikar1999approximation},
+where $S$ is the set of terminals.
+It is also known that this problem cannot be approximated within ratio 
+$\log^{2 - \varepsilon}$ 
+unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$~\cite{halperin2003polylogarithmic}.
+To the best of our knowledge, this is the best approximation algorithm known for \Prob{}.
+     
