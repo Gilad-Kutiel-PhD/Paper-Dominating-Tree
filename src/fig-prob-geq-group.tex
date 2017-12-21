@@ -1,0 +1,68 @@
+\begin{tikzpicture}[every node/.style={default node}]
+\foreach[count=\i] \x \y in {
+	0/0
+	,1/2,1/-1
+	,2/0
+	,3/1,3/-2
+	,4/0
+}{
+	\node(\i) at(\x,\y) {\i};
+}
+
+\foreach \u \v in {
+	1/2,1/3%
+	,2/4,2/5%
+	,3/4,3/6,3/7%
+	,4/5,4/7%
+	,5/7%
+	,6/7%
+}{
+	\draw (\u) -- (\v);
+}
+
+\draw[dashed, blue]
+(5.north) to[out=0,in=0]
+(7.south) to[out=180,in=180]
+(5.north)
+;
+
+\draw[dotted, green]
+(7.north) to[out=0,in=0]
+(6.south) to[out=180,in=180]
+(7.north)
+;
+
+\begin{scope}[xshift=6cm]
+\foreach[count=\i] \x \y in {
+	0/0
+	,1/2,1/-1
+	,2/0
+	,3/1,3/-2
+	,4/0
+}{
+	\node(\i) at(\x,\y) {\i};
+}
+
+\node(57) at(6,1) {\small 57};
+\node(76) at(6,-1) {\small 76};
+
+\foreach \u \v in {
+	1/2,1/3%
+	,2/4,2/5%
+	,3/4,3/6,3/7%
+	,4/5,4/7%
+	,5/7%
+	,6/7%
+}{
+	\draw (\u) -- (\v);
+}
+\foreach \u \v in {
+	5/57,7/57%
+	,7/76,6/76%
+}{
+	\draw (\u) -- (\v) node[label above]{$\infty$};
+}
+\end{scope}
+
+
+\end{tikzpicture}

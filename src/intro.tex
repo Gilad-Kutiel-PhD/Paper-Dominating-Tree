@@ -29,7 +29,24 @@ shin2010approximation%
 ,adasme2016models%
 ,adasme2017minimum%
 }.
+Figure~\ref{fig:problem} show an example instance and a possible solution to the problem. 
 
+\begin{figure}
+\begin{center}
+\input{fig-problem}
+\end{center}
+\caption{\label{fig:problem}}
+\end{figure}
+
+Given an undirected graph $G = (V, E)$ with some subsets of vertices called groups,
+and a weight function $w:E \to \R$,
+the \textsc{Group Steiner Tree} problem is to find a minimum weight sub-tree
+of $G$ which contains at least one vertex from each group. 
+
+In this paper we show that the two problems are equivalents 
+from approximation algorithms perspective.
+This improves upon both the best known approximation algorithm and the best 
+inapproximability result for \Prob{}.
 
 \textbf{Previous Work:}
 CDS has a long history starting at the late 70s~\cite{sampathkumar1979connected},
@@ -50,7 +67,7 @@ Unfortunately, the current best approximation algorithm for the
 approximation ratio~\cite{charikar1999approximation},
 where $S$ is the set of terminals.
 It is also known that this problem cannot be approximated within ratio 
-$\log^{2 - \varepsilon}$ 
+$\log^{2 - \varepsilon} n$ 
 unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$~\cite{halperin2003polylogarithmic}.
 To the best of our knowledge, this is the best approximation algorithm known for \Prob{}.
      
