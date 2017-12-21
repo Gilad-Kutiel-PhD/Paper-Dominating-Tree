@@ -1,68 +1,58 @@
 \begin{tikzpicture}[every node/.style={default node}]
-\foreach[count=\i] \x \y in {
-	0/0
-	,1/2,1/-1
-	,2/0
-	,3/1,3/-2
-	,4/0
-}{
-	\node(\i) at(\x,\y) {\i};
+\foreach[count=\i] \a in {0,72,...,288}{
+	\node(\i) at(\a:2) {\i};
 }
 
 \foreach \u \v in {
-	1/2,1/3%
-	,2/4,2/5%
-	,3/4,3/6,3/7%
-	,4/5,4/7%
-	,5/7%
-	,6/7%
+	1/2,2/3,3/4,4/1,4/5,5/1%
 }{
 	\draw (\u) -- (\v);
 }
 
 \draw[dashed, blue]
-(5.north) to[out=0,in=0]
-(7.south) to[out=180,in=180]
-(5.north)
+(2.north) to[out=0,in=0]
+(1.south) to[out=180,in=180]
+(2.north)
 ;
 
 \draw[dotted, green]
-(7.north) to[out=0,in=0]
-(6.south) to[out=180,in=180]
-(7.north)
+(1.north) to[out=0,in=0]
+(5.south) to[out=180,in=180]
+(1.north)
 ;
 
-\begin{scope}[xshift=6cm]
-\foreach[count=\i] \x \y in {
-	0/0
-	,1/2,1/-1
-	,2/0
-	,3/1,3/-2
-	,4/0
-}{
-	\node(\i) at(\x,\y) {\i};
+\draw[dash dot, orange]
+(3.north) to[out=0,in=0]
+(4.south) to[out=180,in=180]
+(3.north)
+;
+
+\begin{scope}[xshift=7cm]
+\foreach[count=\i] \a in {0,72,...,288}{
+	\node(\i) at(\a:2) {\i};
 }
 
-\node(57) at(6,1) {\small 57};
-\node(76) at(6,-1) {\small 76};
-
 \foreach \u \v in {
-	1/2,1/3%
-	,2/4,2/5%
-	,3/4,3/6,3/7%
-	,4/5,4/7%
-	,5/7%
-	,6/7%
+	1/2,2/3,3/4,4/1,4/5,5/1%
 }{
 	\draw (\u) -- (\v);
 }
+
+\node(g1) at(31:3){$g_1$};
+\node(g2) at(-31:3){$g_2$};
+\node(g3) at(180:3){$g_3$};
+
 \foreach \u \v in {
-	5/57,7/57%
-	,7/76,6/76%
+	1/3%
+	,2/4,2/5%
+	,3/5%
+	%
+	,g1/1,g1/2%
+	,g2/1,g2/5%
+	,g3/3,g3/4%
 }{
-	\draw (\u) -- (\v) node[label above]{$\infty$};
+	\draw[dashed] (\u) -- (\v);
 }
 \end{scope}
-
 
 \end{tikzpicture}

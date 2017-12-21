@@ -31,3 +31,13 @@ a group $g_v$ such that none of the vertices in $g_v$ is spanned by $T$, that is
 is not in $T$ nor any of its neighbors and thus $T$ is not a dominating tree - contradiction. 
 \end{proof}
  
+\begin{claim}
+Any feasible group Steiner tree in $(G, w, V, \mathcal{G})$, $T$, is a dominating tree
+in $(G, w)$.
+\end{claim}
+
+\begin{proof}
+Assume for contradiction that $T$ is not a dominating tree, that is, there is 
+a vertex $v$ not in $T$ such that none of its neighbors belong to $T$, thus, 
+$T$ does not cover $g_v$ - contradiction. 
+\end{proof}
