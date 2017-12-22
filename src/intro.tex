@@ -30,7 +30,11 @@ Figure~\ref{fig:problem} show an example instance and a possible solution to the
 \begin{center}
 \input{fig-problem}
 \end{center}
-\caption{\label{fig:problem}}
+\caption{\label{fig:problem}
+From left to right
+a) An instance of the \Problem{} problem.
+b) A possible solution (solid edges) with value of 18.
+}
 \end{figure}
 
 Given an undirected graph $G = (V, E)$ with some subsets of vertices called groups,
@@ -42,6 +46,10 @@ In this paper we show that the two problems are equivalents
 from approximation algorithms perspective.
 This improves upon both the best known approximation algorithm and the best 
 inapproximability result for \Prob{}.
+
+We also consider two extrema variants of \Prob{}, namely,
+the \ProblemStar{} (\ProbStar{}) and the \ProblemPath{} (\ProbPath{}) 
+problems which ask to find a minimum dominating star and path respectively.  
 
 \textbf{Previous Work:}
 CDS has a long history starting at the late 70s~\cite{sampathkumar1979connected},
@@ -66,3 +74,19 @@ $\log^{2 - \varepsilon} n$
 unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$~\cite{halperin2003polylogarithmic}.
 To the best of our knowledge, this is the best approximation algorithm known for \Prob{}.
      
+The existence of a dominating path in a graph was studied in several 
+papers see~\cite{broersma1988existence, faudree2017minimum} for example,
+but, to the best of our knowledge, it was never considered from algorithmic perspective.
+
+\textbf{Our Result:}
+We show that the \Problem{} problem is equivalents to the \ProblemGroup{} problem, 
+by doing so we prove that \Prob{} is inapproximable within $\log^{2 - \varepsilon} n$   
+unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$.
+This also, directly leads to a $\log^2 n \log \Delta$-approximation algorithm, 
+where $\Delta$ is the maximum degree in $G$.
+
+We also consider the \ProblemStar{} problem, show that it is inapproximable within
+ratio of $c \log n$ for some $c > 0$ and show how to reduce it to the \ProblemSetCover{}
+problem to obtain a $O(\log n)$ approximation.
+
+Finally, we consider the \ProblemPath{} problem and show that it is inapproximable at all.
