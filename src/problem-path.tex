@@ -1,0 +1,19 @@
+We show that the \ProblemPath{} problem (\ProbPath{}) cannot be approximated at all
+unless $P = NP$.
+We show a reduction from the \ProblemHam{} problem (\ProbHam{}).
+In \ProbHam{} we are given an undirected graph $G = (V, E)$ and we are 
+asked to decide if there is an Hamiltonian path 
+(a simple path traversing all the vertices in $V$) in $G$ or not.
+\ProbHam{} is one of the classical NP-hard problems.
+
+\begin{figure}
+\begin{center}
+\input{fig-hamiltonian}
+\end{center}
+\caption{\label{fig-hamiltonian}
+From left to right
+a) An instance of the \ProblemHam{} problem.
+b) The corresponded \ProblemPath{} instance, 
+original edges have zero weight, dashed edges have infinite weight.
+}
+\end{figure} 
