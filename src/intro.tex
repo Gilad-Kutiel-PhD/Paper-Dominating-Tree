@@ -22,8 +22,13 @@ b) A possible solution (solid edges) with value of 17.
 
 Given an undirected graph $G = (V, E)$ with some subsets of vertices called groups,
 and a weight function $w:E \to \R$,
-the \textsc{Group Steiner Tree} problem is to find a minimum weight sub-tree
-of $G$ which contains at least one vertex from each group. 
+the \ProblemGroup{} problem (\ProbGroup{}) is to find a minimum weight sub-tree
+of $G$ which contains at least one vertex from each group.
+\ProbGroup{} is not approximable within $ \Omega(\log^{2\textbf{-}\epsilon}n)$
+unless NP admits quasi-polynomial-time Las-Vegas
+algorithm~\cite{halperin2003polylogarithmic}.
+On the other hand, there is a $\log^3 n$-approximation algorithm for the 
+problem~\cite{garg2000polylogarithmic}.
 
 In this paper we show that the two problems are equivalents 
 from approximation algorithms perspective.
