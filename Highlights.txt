@@ -1,0 +1,4 @@
+* The Minimum Dominating Tree problem is equivalent to the Group Stainer Tree problem from approximability perspective
+* The Minimum Dominating Star problem is inapproximable within a ratio of c log(n) for some c > 0
+* The Minimum Dominating Star problem can be reduced to the Set Cover problem to obtain a O(log n)-approximation algorithm
+* The Minimum Dominating Path problem is inapproximable within any ratio
