@@ -10,17 +10,6 @@
 	decorations.pathmorphing,
 }
 
-% NODE
-\tikzset{default node/.style={
-	draw, 
-	circle,
-	inner sep=0mm,
-	minimum size=5mm,
-	very thick,
-	font=\small,
-	black!70,
-}}
-
 % LABELS
 \tikzset{label/.style={
 	draw=none,
@@ -41,6 +30,14 @@
 
 %DEFAULT STYLE
 \tikzset{
-	>=Latex, 
-	very thick,
+	>=Latex
+	,very thick
+	,every node/.style={
+		draw 
+		,circle
+		,inner sep=0mm
+		,minimum size=5mm
+		,very thick
+		,font=\small
+	}
 }
