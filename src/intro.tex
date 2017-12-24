@@ -1,20 +1,3 @@
-% \begin{algorithm}[H]
-% 	\KwData{this text}
-% 	\KwResult{how to write algorithm with \LaTeX2e }
-% 	initialization\;
-% 	\While{not at end of this document}{
-% 		read current\;
-% 		\eIf{understand}{
-% 			go to next section\;
-% 			current section becomes this one\;
-% 		}{
-% 			go back to the beginning of current section\;
-% 		}
-% 	}
-% \caption{How to write algorithms}
-% \end{algorithm}
-% 
-
 Given an undirected graph $G = (V, E)$ and a weight function $w:E \to \R$, 
 the \Problem{} problem (\Prob{}) asks to find a minimum weight sub-tree of $G$, 
 $T = (U, F)$, such that every $v \in V \setminus U$ is adjacent to at least one 
@@ -24,7 +7,7 @@ The special case when the weight function is uniform is known as the
 Both CDS and \Prob{} have many applications in routing
 for mobile ad-hoc networks, see for 
 example~\cite{shin2010approximation,cheng2003polynomial,das1997routing,adasme2016models,adasme2017minimum}.
-Figure~\ref{fig:problem} show an example instance and a possible solution to the problem. 
+Figure~\ref{fig:problem} shows an example instance and a possible solution to the problem. 
 
 \begin{figure}
 \begin{center}
@@ -33,7 +16,7 @@ Figure~\ref{fig:problem} show an example instance and a possible solution to the
 \caption{\label{fig:problem}
 From left to right
 a) An instance of the \Problem{} problem.
-b) A possible solution (solid edges) with value of 18.
+b) A possible solution (solid edges) with value of 17.
 }
 \end{figure}
 
@@ -46,7 +29,6 @@ In this paper we show that the two problems are equivalents
 from approximation algorithms perspective.
 This improves upon both the best known approximation algorithm and the best 
 inapproximability result for \Prob{}.
-
 We also consider two extrema variants of \Prob{}, namely,
 the \ProblemStar{} (\ProbStar{}) and the \ProblemPath{} (\ProbPath{}) 
 problems which ask to find a minimum dominating star and path respectively.  
@@ -54,14 +36,13 @@ problems which ask to find a minimum dominating star and path respectively.
 \textbf{Previous Work:}
 CDS has a long history starting at the late 70s~\cite{sampathkumar1979connected},
 and it is approximable within $\ln\Delta + 3$~\cite{guha1998approximation} 
-where $\Delta$ is the maximum degree in $G$.
-We are not aware of any hardness result regarding the CDS that show that this approximation
-ratio is the best we can hope for.
+where $\Delta$ is the maximum degree in $G$,
+which is the best one can wish for if $P \neq NP$. 
 
 \Prob{}, to the best of our knowledge, was introduced in~\cite{shin2010approximation}.
 In the same paper it was shown that the \textsc{Minimum Weighted Dominating Set} problem 
 can be reduced to \Prob{} in a way that preserve the approximation ratio.
-Thus, there is no $(1 - \varepsilon)\log n$-approximation algorithm for the \Prob{} problem
+Thus, there is no $c\log n$-approximation algorithm, for some $c > 0$, for \Prob{}
 unless $P = NP$.
 In the same paper it was shown that \Prob{} can be reduced to the 
 \textsc{Minimum Directed Steiner Tree} problem in a way that preserve the approximation ratio.
@@ -69,24 +50,19 @@ Unfortunately, the current best approximation algorithm for the
 \textsc{Minimum Directed Steiner Tree} problem yields a $|S|^\varepsilon$ 
 approximation ratio~\cite{charikar1999approximation},
 where $S$ is the set of terminals.
-It is also known that this problem cannot be approximated within ratio 
-$\log^{2 - \varepsilon} n$ 
-unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$~\cite{halperin2003polylogarithmic}.
 To the best of our knowledge, this is the best approximation algorithm known for \Prob{}.
-     
 The existence of a dominating path in a graph was studied in several 
 papers see~\cite{broersma1988existence, faudree2017minimum} for example,
 but, to the best of our knowledge, it was never considered from algorithmic perspective.
 
 \textbf{Our Result:}
-We show that the \Problem{} problem is equivalents to the \ProblemGroup{} problem, 
+We show that the \Problem{} problem is equivalent to the \ProblemGroup{} problem
+from approximability perspective, 
 by doing so we prove that \Prob{} is inapproximable within $\log^{2 - \varepsilon} n$   
 unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$.
 This also, directly leads to a $\log^2 n \log \Delta$-approximation algorithm, 
 where $\Delta$ is the maximum degree in $G$.
-
 We also consider the \ProblemStar{} problem, show that it is inapproximable within
 ratio of $c \log n$ for some $c > 0$ and show how to reduce it to the \ProblemSetCover{}
 problem to obtain a $O(\log n)$ approximation.
-
 Finally, we consider the \ProblemPath{} problem and show that it is inapproximable at all.
