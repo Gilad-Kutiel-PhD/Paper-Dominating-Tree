@@ -1,0 +1,41 @@
+We now show how to reduce \ProbStar{} to an instance of the \ProblemSetCover{} problem
+(\ProbSetCover{}) in order to obtain a $O(\log n)$-approximation algorithm.
+This is the best one can hope for if $P \neq NP$.
+
+Without loss of generality, we assume that the center of the dominating star is known,
+or otherwise we can solve the problem for every vertex in the graph assuming it is 
+the center.  
+Given an undirected weighted graph $(G, w)$ and a the center of the dominating star
+$c \in V$ we create the following an instance of \ProbSetCover{} 
+$(U, \mathcal{S}, w')$ as follow:
+\begin{description}
+\item[$U$] - $V \setminus N(c)$
+\item[$\mathcal{S}$] - $\{S_v : cv \in E\}$
+\item[$S_v$] - $N(v) \cap U$
+\item[$w'$] - $w'(S_v) = w(cv)$ 
+\end{description}
+
+
+\begin{claim}
+If $S = (c, L)$ is a dominating star in $G$ then 
+$\mathcal{C} = \{S_v : v \in L\}$ is a set cover in $(U, \mathcal{S}, w')$,
+moreover, $w(S) = w'(\mathcal{C})$.  
+\end{claim}
+
+\begin{proof}
+$w(S) = w'(\mathcal{C})$ by construction.
+Now, assume for contradiction that $\mathcal{C}$ is not a set cover and let $v$
+be an uncover element then $v$ is also not dominated by $S$ - contradiction.
+\end{proof}
+
+\begin{claim}
+If $\mathcal{C}$ is a set cover in $(U, \mathcal{S}, w')$ 
+then $S = (c, \{v : S_v \in \mathcal{C}\})$ is a dominating star in $G$,
+moreover, $w(S) = w'(\mathcal{C})$.  
+\end{claim}
+
+\begin{proof}
+$w(S) = w'(\mathcal{C})$ by construction.
+Now, assume for contradiction that $S$ is not a dominating star and let $v$
+be an undominated vertex then $v$ is also uncovered by $\mathcal{C}$ - contradiction.
+\end{proof}
