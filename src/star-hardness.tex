@@ -1,13 +1,16 @@
 We show an approximation preserving reduction from the \ProblemDom{} problem (\ProbDom)
 to \ProblemStar{}.
 Given an (unweighted) instance of \ProbDom{} $G = (V, E)$ we create an instance of \ProbStar{}
-$(G', w)$ where $G' = (L \cup R \cup {c}, E' \cup \{c\} \times L$.
+$(G', w)$ where $G' = (L \cup R \cup {c}, E' \cup \{c\} \times L$).
 \begin{description}
 \item[L] - $\{v_l : v \in V\}$
 \item[R] - $\{v_r : v \in V\}$
 \item[E'] - $\{u_lv_r : uv \in E\}$
 \end{description}
 We also set $w(e) = \infty$ for every $e \in E'$ and $w(cv_l) = 1$ for every $v_l \in L$.
+Figure~\ref{fig:star-hardness} depicts this transformation.
+Clearly the above transformation can be done in polynomial time,
+The following two claims show that this is an approximation preserving reduction:
 
 \begin{figure}
 \begin{center}

@@ -1,10 +1,10 @@
 We now show an approximation-preserving reduction from \ProbGroup{} to
 \Prob{}.
-Given an instance of \ProbGroup{}, $(G, w, S, \mathcal{G})$, where $G = (V, E)$, 
+Given an instance of \ProbGroup{}, $(G, w, \mathcal{G})$, where $G = (V, E)$, 
 we define an instance of \Prob{},
 $(G', w')$ where $G' = (V', E')$, and:
 \begin{description}
-\item[V'] - $V \cup \mathcal{G}$
+\item[V'] - $V \cup \{g_i : g_i \in \mathcal{G}\}$
 \item[E'] - $E \cup \{vg_i : v \in g_i\} \cup (V \times V) \setminus E$
 \item[w'] - $
 w'(e) = 
@@ -15,7 +15,9 @@ w(e) 	& e \in E
 \end{cases}
 $
 \end{description}
-
+Figure~\ref{fig:prob-geq-group} depicts this transformation.
+Clearly the above transformation can be done in polynomial time,
+The following two claims show that this is an approximation preserving reduction:
 
 \begin{figure}
 \begin{center}
@@ -33,7 +35,7 @@ Weights for the original edges remain intact, dashed edges have infinity weight.
 
 \begin{claim}
 Any dominating tree with finite weight, $T$, in $(G', w')$ is a feasible group Steiner tree in 
-$(G, w, S, \mathcal{G})$.
+$(G, w, \mathcal{G})$.
 \end{claim}
 
 \begin{proof}
@@ -44,7 +46,7 @@ is not in dominated by any vertex in $T$ - contradiction.
 \end{proof}
  
 \begin{claim}
-Any feasible group Steiner tree in $(G, w, V, \mathcal{G})$, $T$, is a dominating tree
+Any feasible group Steiner tree in $(G, w, \mathcal{G})$, $T$, is a dominating tree
 in $(G', w')$.
 \end{claim}
 
