@@ -1,0 +1,16 @@
+Recall that instance of \ProbGroup{} is a tuple $(G, w, \mathcal{G})$,
+where $G = (V, E)$ is an undirected graph, $w:E \to \mathcal{R}$ is a weight function, 
+and $\mathcal{G} \subseteq 2^V$ is a family of groups of vertices.
+A Steiner group tree of is a sub-tree of $G$, $T = (U, F)$
+such that $g \cap U \neq \emptyset$ for each $g \in \mathcal{G}$.
+The cost of such tree is $\sum_e \in F w(e)$.
+Given an instance of \ProbGroup{} we are looking for a minimum cost Steiner group tree
+of $G$.
+
+In this section we show that \Prob{} is equivalent to \ProbGroup{} from 
+approximability perspective, 
+that is every approximation algorithm to one problem yields the same approximation 
+ratio for the other problem.
+To show this we introduce approximation preserving reductions from \Prob{} to \ProbGroup{}
+and vice-versa. 
+

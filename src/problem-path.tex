@@ -1,0 +1,42 @@
+We show that the \ProblemPath{} problem (\ProbPath{}) cannot be approximated at all
+unless $P = NP$.
+We show a reduction from the \ProblemHam{} problem (\ProbHam{}).
+In \ProbHam{} we are given an undirected graph $G = (V, E)$ and we are 
+asked to decide if there is an Hamiltonian path 
+(a simple path traversing all the vertices in $V$) in $G$ or not.
+\ProbHam{} is one of the classical NP-hard problems.
+
+Given an instance of \ProbHam{}, $G = (V, E)$, we define an instance of \ProbPath{},
+$(G', w)$, where $G' = (V \cup \{v' : v \in V\}, E \cup \{vv' : v \in V\})$.
+We set $w(e) = 0$ for every edge $e \in E$ and set $w(e) = \infty$ otherwise.
+Figure~\ref{fig:hamiltonian} depicts this transformation.  
+We now claim that any (multiplicative) approximation algorithm for \ProbPath{}
+can solve \ProbHam{}.
+Let $G$ be an instance of (decision problem) \ProbHam{}, 
+and denote by $A(G', w)$ the value of (approximation) algorithm, $A$, 
+on the corresponded \ProbPath{} instance, then:
+
+\begin{claim}
+$A(G', w) = 0 \iff G \in \ProbHam{}$. 
+\end{claim} 
+
+\begin{proof}
+Let $P$ be a dominating path in $(G', w)$ with value 0, 
+then it uses only edges of $E$, moreover $P$ is an hamiltonian path in $G$ or otherwise
+there is a vertex $v'$ that is not dominated by $P$.
+Now, let $P$ be an hamiltonian path in $G$ then $P$ is a dominating path in $G'$ with value
+0, thus, any (multiplicative) approximation algorithm must also find a path value 0.
+\end{proof}
+
+
+\begin{figure}
+\begin{center}
+\input{fig-hamiltonian}
+\end{center}
+\caption{\label{fig:hamiltonian}
+From left to right
+a) An instance of the \ProblemHam{} problem.
+b) The corresponded \ProblemPath{} instance, 
+original edges have zero weight, dashed edges have infinite weight.
+}
+\end{figure} 

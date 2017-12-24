@@ -1,0 +1,58 @@
+We now show an approximation-preserving reduction from \ProbGroup{} to
+\Prob{}.
+Given an instance of \ProbGroup{}, $(G, w, \mathcal{G})$, where $G = (V, E)$, 
+we define an instance of \Prob{},
+$(G', w')$ where $G' = (V', E')$, and:
+\begin{description}
+\item[V'] - $V \cup \{g_i : g_i \in \mathcal{G}\}$
+\item[E'] - $E \cup \{vg_i : v \in g_i\} \cup (V \times V) \setminus E$
+\item[w'] - $
+w'(e) = 
+\begin{cases}
+w(e) 	& e \in E
+\\
+\infty & \text{otherwise}
+\end{cases}
+$
+\end{description}
+Figure~\ref{fig:prob-geq-group} depicts this transformation.
+Clearly the above transformation can be done in polynomial time,
+The following two claims show that this is an approximation preserving reduction:
+
+\begin{figure}
+\begin{center}
+\input{fig-prob-geq-group}
+\end{center}
+\caption{\label{fig:prob-geq-group}
+From left to right:
+a) An instance of \ProbGroup{} (weights are omitted), 
+groups are marked by a dashed blue, dotted green, and dashed-dotted lines respectively.  
+b) A corresponding \Prob{} instance: we add a vertex for each group and connect it 
+to all terminals in the group.
+Weights for the original edges remain intact, dashed edges have infinity weight.   
+}
+\end{figure}
+
+\begin{claim}
+Any dominating tree with finite weight, $T$, in $(G', w')$ is a feasible group Steiner tree in 
+$(G, w, \mathcal{G})$.
+\end{claim}
+
+\begin{proof}
+Observe first that $T$ contains only original edges or otherwise its weight is infinite.  
+Assume for contradiction that $T$ is not feasible group Steiner tree, that is, there is 
+a group $g_i$ such that none of the vertices in $g_i$ is spanned by $T$, that is $g_i$
+is not in dominated by any vertex in $T$ - contradiction. 
+\end{proof}
+ 
+\begin{claim}
+Any feasible group Steiner tree in $(G, w, \mathcal{G})$, $T$, is a dominating tree
+in $(G', w')$.
+\end{claim}
+
+\begin{proof}
+First, observe that any original vertex dominate all other original vertices.
+Assume for contradiction that $T$ is not a dominating tree, that is, there is 
+a new vertex $g_i$ that is not dominated by $T$ which implies that 
+$T$ does not cover $g_i$ - contradiction. 
+\end{proof}

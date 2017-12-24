@@ -1,0 +1,48 @@
+We start by showing an approximation-preserving reduction from \Prob{} to
+\ProbGroup{}.
+Given an instance of \Prob{}, $(G, w)$, where $G = (V, E)$, 
+we define an instance of \ProbGroup{},
+$(G, w, \mathcal{G})$.
+We now have to define $\mathcal{G}$: for each vertex $v \in V$ we define 
+$g_v \in \mathcal{G}$ to be $\{v\} \cup N(v)$.
+Figure~\ref{fig:prob-leq-group} depicts this transformation.
+Note that the number of groups is $n$ and that the size of the largest group is $\Delta$.
+Clearly this transformation can be done in polynomial time.
+The following two claims show that this is an approximation preserving reduction. 
+
+\begin{figure}
+\begin{center}
+\input{fig-prob-leq-group}
+\end{center}
+\caption{\label{fig:prob-leq-group}
+From left to right:
+a) A \Prob{} instance (weights are omitted).
+b) A corresponding \ProbGroup{} instance on the same weighted graph.
+For each vertex $v$ we define a group
+that contains its neighborhood to ensure that in any group Steiner tree there is at least
+one vertex that dominate $v$.
+$g_2$ is marked in the figure with a dashed blue line.  
+}
+\end{figure}
+
+\begin{claim}
+Any dominating tree, $T$, in $(G, w)$ 
+is a feasible group Steiner tree in $(G, w, \mathcal{G})$.
+\end{claim}
+
+\begin{proof}
+Assume for contradiction that $T$ is not feasible group Steiner tree, that is, there is 
+a group $g_v$ such that none of the vertices in $g_v$ is spanned by $T$, that is $v$
+is not in $T$ nor any of its neighbors and thus $T$ is not a dominating tree - contradiction. 
+\end{proof}
+ 
+\begin{claim}
+Any feasible group Steiner tree in $(G, w, \mathcal{G})$, $T$, is a dominating tree
+in $(G, w)$.
+\end{claim}
+
+\begin{proof}
+Assume for contradiction that $T$ is not a dominating tree, that is, there is 
+a vertex $v$ not in $T$ such that none of its neighbors belong to $T$, thus, 
+$T$ does not cover $g_v$ - contradiction. 
+\end{proof}

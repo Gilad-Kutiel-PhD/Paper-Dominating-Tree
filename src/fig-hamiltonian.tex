@@ -1,0 +1,52 @@
+\begin{tikzpicture}[]
+\foreach[count=\i] \x \y in {
+	0/0
+	,1/2,1/-1
+	,2/0
+	,3/1,3/-2
+	,4/0
+}{
+	\node(\i) at(\x,\y) {\i};
+}
+
+\foreach \u \v in {
+	1/2,1/3%
+	,2/4,2/5%
+	,3/4,3/6,3/7%
+	,4/5,4/7%
+	,5/7%
+	,6/7%
+}{
+	\draw (\u) -- (\v);
+}
+
+\begin{scope}[xshift=6cm]
+\foreach[count=\i] \x \y in {
+	0/0
+	,1/2,1/-1
+	,2/0
+	,3/1,3/-2
+	,4/0
+}{
+	\node(\i) at(\x,\y) {\i};
+}
+
+\foreach \u \v in {
+	1/2,1/3%
+	,2/4,2/5%
+	,3/4,3/6,3/7%
+	,4/5,4/7%
+	,5/7%
+	,6/7%
+}{
+	\draw (\u) -- (\v);
+}
+
+\foreach[count=\i] \p in {
+	left,above,below left,left,above right,below,right%
+}{
+	\node(\i')[\p=3mm of \i] {\i'};
+	\draw[dashed] (\i) -- (\i');
+}
+\end{scope}
+\end{tikzpicture}
