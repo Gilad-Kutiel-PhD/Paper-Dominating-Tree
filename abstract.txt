@@ -1,0 +1,8 @@
+Given an undirected graph G = (V, E) and a weight function w:E -> R, the Minimum Dominating Tree problem asks to find a minimum weight sub-tree of G, T = (U, F), such that every v in V \ U is adjacent to at least one vertex in U.
+The special case when the weight function is uniform is known as the Minimum Connected Dominating Set problem.
+
+Given an undirected graph G = (V, E) with some subsets of vertices called groups, and a weight function w:E -> R, the Group Steiner Tree problem is to find a minimum weight sub-tree of G which contains at least one vertex from each group. 
+
+In this paper we show that the two problems are equivalents from approximability perspective.
+This improves upon both the best known approximation algorithm and the best inapproximability result for the Minimum Dominating Tree problem.
+We also consider two extrema variants of the Minimum Dominating Tree problem, namely, the Minimum Dominating Star and the Minimum Dominating Path problems which ask to find a minimum dominating star and path respectively.  
