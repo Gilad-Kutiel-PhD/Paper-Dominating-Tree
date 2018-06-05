@@ -5,8 +5,17 @@ vertex in $U$.
 The special case when the weight function is uniform is known as the 
 \textsc{Minimum Connected Dominating Set} problem (CDS). 
 Both CDS and \Prob{} have many applications in routing
-for mobile ad-hoc networks, see for 
-example~\cite{shin2010approximation,cheng2003polynomial,das1997routing,adasme2016models,adasme2017minimum}.
+for mobile ad-hoc networks, 
+and a considerable amount of research has been done lately on these problems
+see for example~\cite{%
+shin2010approximation%
+,cheng2003polynomial%
+,das1997routing%
+,adasme2016models%
+,adasme2017minimum%
+,rossi2018properties%
+,adasme2018improved%
+}.
 Figure~\ref{fig:problem} shows an example instance and a possible solution to the problem. 
 
 \begin{figure}
@@ -34,6 +43,9 @@ In this paper we show that the two problems are equivalents
 from approximation algorithms perspective.
 This improves upon both the best known approximation algorithm and the best 
 inapproximability result for \Prob{}.
+The results are quite simple but, in our opinion, 
+are important as they pour some new light on the nature of these problems.
+ 
 We also consider two extrema variants of \Prob{}, namely,
 the \ProblemStar{} (\ProbStar{}) and the \ProblemPath{} (\ProbPath{}) 
 problems which ask to find a minimum dominating star and path respectively.  
