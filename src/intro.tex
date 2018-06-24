@@ -23,7 +23,9 @@ Figure~\ref{fig:problem} shows an example instance and a possible solution to th
 
 \begin{figure}
 \begin{center}
+\scalebox{.8}{
 \input{fig-problem}
+}
 \end{center}
 \caption{\label{fig:problem}
 From left to right
@@ -42,17 +44,13 @@ algorithm~\cite{halperin2003polylogarithmic}.
 On the other hand, there is a $\log^3 n$-approximation algorithm for the 
 problem~\cite{garg2000polylogarithmic}.
 
-In this paper we show that the two problems are equivalents 
+In this paper we show that the two problems are equivalent 
 from approximation algorithms perspective.
 This improves upon both the best known approximation algorithm and the best 
 inapproximability result for \Prob{}.
 The results are quite simple but, in our opinion, 
 are important as they pour some new light on the nature of these problems.
  
-We also consider two extrema variants of \Prob{}, namely,
-the \ProblemStar{} (\ProbStar{}) and the \ProblemPath{} (\ProbPath{}) 
-problems which ask to find a minimum dominating star and path respectively.  
-
 \textbf{Previous Work:}
 CDS has a long history starting at the late 70s~\cite{sampathkumar1979connected},
 and it is approximable within $\ln\Delta + 3$~\cite{guha1998approximation} 
@@ -71,9 +69,6 @@ Unfortunately, the current best approximation algorithm for the
 approximation ratio~\cite{charikar1999approximation},
 where $S$ is the set of terminals.
 To the best of our knowledge, this is the best approximation algorithm known for \Prob{}.
-The existence of a dominating path in a graph was studied in several 
-papers see~\cite{broersma1988existence, faudree2017minimum} for example,
-but, to the best of our knowledge, it was never considered from algorithmic perspective.
 
 \textbf{Our Result:}
 We show that the \Problem{} problem is equivalent to the \ProblemGroup{} problem
@@ -82,7 +77,3 @@ by doing so we prove that \Prob{} is inapproximable within $\log^{2 - \varepsilo
 unless $NP \subseteq \text{ZTIME}(n^{\text{polylog}(n)})$.
 This also, directly leads to a $\log^2 n \log \Delta$-approximation algorithm, 
 where $\Delta$ is the maximum degree in $G$.
-We also consider the \ProblemStar{} problem, show that it is inapproximable within
-ratio of $c \log n$ for some $c > 0$ and show how to reduce it to the \ProblemSetCover{}
-problem to obtain a $O(\log n)$ approximation.
-Finally, we consider the \ProblemPath{} problem and show that it is inapproximable at all.
